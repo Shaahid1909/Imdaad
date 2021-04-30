@@ -24,7 +24,7 @@ class TechWorkOrderCell: UITableViewCell {
         layerView.layer.shadowRadius = 4
         layerView.layer.shadowOpacity = 1
         layerView.layer.shadowColor = UIColor.gray.cgColor
-        layerView.layer.shadowOffset = CGSize(width: 0 , height:8)
+        layerView.layer.shadowOffset = CGSize(width: 0 , height:6)
         
     }
 

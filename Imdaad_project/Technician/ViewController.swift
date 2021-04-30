@@ -8,7 +8,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
@@ -17,7 +17,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        txtEmail.delegate = self
+        txtPassword.delegate = self
+        HideKeyboard()
         vieww.layer.cornerRadius = 2
         vieww.layer.shadowColor = UIColor.black.cgColor
         vieww.layer.shadowOffset = CGSize(width: 0.5, height: 5.0);
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
         
    
 
+   
     }
     
     
@@ -65,10 +68,10 @@ class ViewController: UIViewController {
                   print("jsonData : \(jsonData.allValues)")
                   for i in jsonData.allValues{
                     if i as! String == "supervisor"{
-                        if txtEmail.text == "1122"{
+                       // if txtEmail.text == "1122"{
                        
-                       //   userText.text = ""
-                      //    passText.text = ""
+                            txtEmail.text = ""
+                            txtPassword.text = ""
                        //   activityindicator.stopAnimating()
                        //   activityindicator.isHidden = true
                     let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -77,24 +80,27 @@ class ViewController: UIViewController {
                                       // vc.pushViewController(vc, animated: true)
                     vc.modalPresentationStyle = .fullScreen
                     self.present(vc, animated: true, completion: nil)
-               //--     vc.listnames = txtEmail.text
-                        }
-                        }else if i as! String == "technician"{
-                         
-                         // userText.text = ""
-                         // passText.text = ""
-                      //    activityindicator.stopAnimating()
-                       //   activityindicator.isHidden = true
-                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//                        let navigationController = storyBoard.instantiateViewController(withIdentifier: "SupervisorView") as! UINavigationController
-                        let vc = storyBoard.instantiateViewController(withIdentifier: "TechView") as! TechnicianHomeVc
-//                        navigationController.pushViewController(vc, animated: true)
-                        vc.modalPresentationStyle = .fullScreen
-                        self.present(vc, animated: true, completion: nil)
-                            vc.emp_id = txtEmail.text
                             
-                        
-                    }else if i as! String == "failure"{
+                            //  vc.Semp_id = txtEmail.text
+                     //   }
+                        }
+//                    else if i as! String == "technician"{
+//
+//                         // userText.text = ""
+//                         // passText.text = ""
+//                      //    activityindicator.stopAnimating()
+//                       //   activityindicator.isHidden = true
+//                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+////                        let navigationController = storyBoard.instantiateViewController(withIdentifier: "SupervisorView") as! UINavigationController
+//                        let vc = storyBoard.instantiateViewController(withIdentifier: "TechView") as! TechnicianHomeVc
+////                        navigationController.pushViewController(vc, animated: true)
+//                        vc.modalPresentationStyle = .fullScreen
+//                        self.present(vc, animated: true, completion: nil)
+//                            vc.emp_id = txtEmail.text
+//
+//
+//                    }
+                    else if i as! String == "failure"{
                    //   activityindicator.stopAnimating()
                  //     activityindicator.isHidden = true
                       let alert = UIAlertController(title: "Alert", message: "Check Username and Password", preferredStyle: UIAlertController.Style.alert)
@@ -104,11 +110,26 @@ class ViewController: UIViewController {
                       present(alert, animated: true, completion: nil)
                         self.removeSpinner()
                     }}}}}
+        
+        UserDefaults.standard.set(txtEmail.text, forKey: "employee_id")
 
     }
     
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
+    func HideKeyboard() {
+        let Tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self , action: #selector(DismissKeyboard))
+        view.addGestureRecognizer(Tap)
+    }
+ 
+  //-------DismissKeyboard
+    @objc func DismissKeyboard(){
+        view.endEditing(true)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

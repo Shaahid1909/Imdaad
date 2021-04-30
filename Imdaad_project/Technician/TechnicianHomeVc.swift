@@ -13,12 +13,14 @@ class TechnicianHomeVc: UIViewController,UITableViewDelegate,UITableViewDataSour
     var emp_id: String?
     var urlpath:String?
     
+    var a:[String] = []
+    var AssignWkList = [workorderData]()
+    var PendingWKList = [workorderData]()
+    var CompletedWKList = [workorderData]()
+    
     @IBOutlet weak var tabView: UITableView!
-    
     @IBOutlet weak var filterVieww: UIView!
-    
     @IBOutlet weak var sgTextOnlyBar: WMSegment!
-    
     @IBAction func notificationTapped(_ sender: Any) {
         
         performSegue(withIdentifier: "notify", sender: self)
@@ -137,18 +139,16 @@ class TechnicianHomeVc: UIViewController,UITableViewDelegate,UITableViewDataSour
                     cell.locationlab.text = "NO 64, Al Raqim Plaza, Dheira(16 kms)"
                 }
                 else {
-                    cell.wktypTokenlab.text = "W073563"
-                    cell.wktype.text = "AC repair"
-                     cell.supervisorlab.text = "Vernon Pitman"
-                    cell.dateandtimelab.text = "21 NOV, 2020(11:00AM - 3:00PM)"
+                    cell.wktypTokenlab.text = "W073565"
+                    cell.wktype.text = "Plumber"
+                     cell.supervisorlab.text = "Isaac Blake"
+                    cell.dateandtimelab.text = "14 Dec, 2020(11:00AM - 3:00PM)"
                     cell.locationlab.text = "NO 64, Al Raqim Plaza, Dheira(16 kms)"
                 }
 
-                return cell;
-            
+                return cell
         
-        
-    }
+                }
 
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -191,10 +191,10 @@ class TechnicianHomeVc: UIViewController,UITableViewDelegate,UITableViewDataSour
     }
     
     func downloadItems() {
-        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {return}
+     //   guard let email = UserDefaults.standard.value(forKey: "email") as? String else {return}
 
 
-        let request = NSMutableURLRequest(url: NSURL(string: urlpath ?? "https://appstudio.co/iOS/N_Imdaad_emp_retrieve.php")! as URL)
+        let request = NSMutableURLRequest(url: NSURL(string:"https://appstudio.co/iOS/imdaad_technician_retrieve.php")! as URL)
             request.httpMethod = "POST"
             let postString = "employee_id=\(emp_id)"
             print("postString \(postString)")
@@ -225,43 +225,37 @@ class TechnicianHomeVc: UIViewController,UITableViewDelegate,UITableViewDataSour
             var jsonElement = NSDictionary()
         let stocks = NSMutableArray()
         for i in 0 ..< jsonResult.count
-             {
-            print("The count is \(jsonResult.count)")
-            jsonElement = jsonResult[i] as! NSDictionary
-                //the following insures none of the JsonElement values are nil through optional binding
-            if let worktype = jsonElement["worktype"] as? String,
-               let worktypetoken = jsonElement["token"] as? String,
-            let supervisor = jsonElement["supervisor_name"] as? String,
-            let dateTime = jsonElement["date_time"] as? String,
-            let location = jsonElement["location"] as? String
-            {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
-            let datetime = formatter.date(from: "\(jsonElement["TaskDate"] as! String) 13:37:00 +0100")
-            let dateformatter = DateFormatter()
-            dateformatter.dateFormat = "E,d MMM"
-            let datetostring = dateformatter.string(from: datetime!)
-            print("datetime \(datetime) \(jsonElement["TaskDate"] as? String) \(datetostring)")
-            
-                wkorder.append(workorderData(worktypetoken: worktypetoken, Worktype: worktype, supervisor: supervisor, Datetime: dateTime, location: location))
-                
-                }
-            }
+        {
+       jsonElement = jsonResult[i] as! NSDictionary
+       a.append(jsonElement["status_token"] as! String)
+       print("assign : \(jsonElement["status_token"] as! String) \(a)")
+       if jsonElement["status_token"] as! String == "assign"{
+        PendingWKList.append(workorderData(token_id: jsonElement["work_type_token"] as? String, supervisor_name: jsonElement["supervisor_name"] as? String, date_time: jsonElement["date_time"] as? String,location: jsonElement["location"] as? String,workorders: jsonElement["work_order_count"] as? String,priority:  jsonElement["is_high_priority"] as? String,work_type: jsonElement["work_type"] as? String))
+       }else if jsonElement["status_token"] as! String == "Completed"{
+        PendingWKList.append(workorderData(token_id: jsonElement["work_type_token"] as? String, supervisor_name: jsonElement["supervisor_name"] as? String, date_time: jsonElement["date_time"] as? String, location: jsonElement["location"] as? String,workorders: jsonElement["work_order_count"] as? String,priority:  jsonElement["is_high_priority"] as? String,work_type: jsonElement["work_type"] as? String))
+       }else{
+        CompletedWKList.append(workorderData(token_id: jsonElement["work_type_token"] as? String, supervisor_name: jsonElement["supervisor_name"] as? String, date_time: jsonElement["date_time"] as? String, location: jsonElement["location"] as? String,workorders: jsonElement["work_order_count"] as? String,priority:  jsonElement["is_high_priority"] as? String,work_type: jsonElement["work_type"] as? String))
+           print("pending_work_order_list : \(PendingWKList)")
+       }
+       
+       print("work_order_list : \(PendingWKList) \(CompletedWKList) \(PendingWKList)")
+       }
         DispatchQueue.main.async(execute: { [self] () -> Void in
-         
+
         })
         }
     
 
-    
-
 }
 struct workorderData {
-    var worktypetoken:String?
-var Worktype:String
-var supervisor:String?
-var Datetime: String?
-var location: String?
+    var token_id:String?
+    var supervisor_name:String?
+    var date_time:String?
+    var location:String?
+    var workorders:String?
+    var priority:String?
+    var work_type:String?
+    
 
 }
 

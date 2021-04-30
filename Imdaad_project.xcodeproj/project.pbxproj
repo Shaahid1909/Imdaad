@@ -10,6 +10,23 @@
 		180189C126335C280034F037 /* notifytabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180189C026335C280034F037 /* notifytabCell.swift */; };
 		180189C626335F010034F037 /* TechWorkOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180189C526335F010034F037 /* TechWorkOrderCell.swift */; };
 		180189CB26336BD70034F037 /* TechWorkorderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180189CA26336BD70034F037 /* TechWorkorderDetail.swift */; };
+		1812FEF626352078006BFBF5 /* supervisorNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FEF526352078006BFBF5 /* supervisorNotificationView.swift */; };
+		1812FEFE263520AF006BFBF5 /* supervisorNotifiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FEFD263520AF006BFBF5 /* supervisorNotifiCell.swift */; };
+		1812FF03263524E1006BFBF5 /* SupervisorWorkorderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF02263524E1006BFBF5 /* SupervisorWorkorderVC.swift */; };
+		1812FF082635290B006BFBF5 /* SupervisorWorkorderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF072635290B006BFBF5 /* SupervisorWorkorderCell.swift */; };
+		1812FF1026352B65006BFBF5 /* SupervisorUnassignedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF0F26352B65006BFBF5 /* SupervisorUnassignedVC.swift */; };
+		1812FF1526352C9E006BFBF5 /* SupervisorUnassignedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF1426352C9E006BFBF5 /* SupervisorUnassignedCell.swift */; };
+		1812FF1A263540E5006BFBF5 /* SupervisorFieldCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF19263540E5006BFBF5 /* SupervisorFieldCompletion.swift */; };
+		1812FF2726354392006BFBF5 /* SupervisorFieldCompletionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF2626354392006BFBF5 /* SupervisorFieldCompletionCell.swift */; };
+		1812FF2C2635536A006BFBF5 /* SupervisorTechnicianWkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF2B2635536A006BFBF5 /* SupervisorTechnicianWkView.swift */; };
+		1812FF3626356145006BFBF5 /* SupervisorTechWkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF3526356145006BFBF5 /* SupervisorTechWkCell.swift */; };
+		1812FF4D26357140006BFBF5 /* SupervisorAssignTechVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF4C26357140006BFBF5 /* SupervisorAssignTechVc.swift */; };
+		1812FF52263571B6006BFBF5 /* SupervisorAssignTechCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF51263571B6006BFBF5 /* SupervisorAssignTechCell.swift */; };
+		1812FF5726357631006BFBF5 /* SupervisorReassignWKdetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF5626357631006BFBF5 /* SupervisorReassignWKdetail.swift */; };
+		1812FF5C26357B3F006BFBF5 /* SupervisorFieldWorkorderdetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF5B26357B3F006BFBF5 /* SupervisorFieldWorkorderdetail.swift */; };
+		1812FF6126359736006BFBF5 /* SupervisorWkdetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF6026359736006BFBF5 /* SupervisorWkdetailView.swift */; };
+		1812FF692635AE55006BFBF5 /* SupervisorTechListVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF682635AE55006BFBF5 /* SupervisorTechListVc.swift */; };
+		1812FF6E2635B037006BFBF5 /* SupervisorTechListCollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF6D2635B037006BFBF5 /* SupervisorTechListCollCell.swift */; };
 		183F55A9263469F300B7B922 /* SupervisorhomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183F55A8263469F300B7B922 /* SupervisorhomeView.swift */; };
 		184BF31326332717006CF9BF /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184BF31226332716006CF9BF /* UIViewController.swift */; };
 		18823D6B2631AE37005F3197 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18823D6A2631AE37005F3197 /* AppDelegate.swift */; };
@@ -22,9 +39,7 @@
 		18A36B3E26328C010074D19E /* WMSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B3D26328C010074D19E /* WMSegment.swift */; };
 		18E1C2692633595400D0EB05 /* NotifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1C2682633595400D0EB05 /* NotifyVC.swift */; };
 		18E9477D26329AE700F2922B /* TechnicianHomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9477C26329AE700F2922B /* TechnicianHomeVc.swift */; };
-		18E9478226329B1000F2922B /* SupervisorHomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9478126329B1000F2922B /* SupervisorHomeVc.swift */; };
 		18FECFCE2633F35B00302B42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FECFCD2633F35800302B42 /* Assets.xcassets */; };
-		18FECFD32633F92800302B42 /* SupervisorhomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FECFD22633F92800302B42 /* SupervisorhomeCollectionCell.swift */; };
 		655064F963B587E0EFBBBB5D /* Pods_Imdaad_project_Imdaad_projectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3634E7C56DBB77207E1E4A27 /* Pods_Imdaad_project_Imdaad_projectUITests.framework */; };
 		89E7E7B850F973AC65DB4986 /* Pods_Imdaad_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAC1ECCE0A67005F4E18744 /* Pods_Imdaad_project.framework */; };
 		F01019AD09CF50BA28346582 /* Pods_Imdaad_projectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05765045C05FAE296E76F932 /* Pods_Imdaad_projectTests.framework */; };
@@ -52,6 +67,23 @@
 		180189C026335C280034F037 /* notifytabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notifytabCell.swift; sourceTree = "<group>"; };
 		180189C526335F010034F037 /* TechWorkOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechWorkOrderCell.swift; sourceTree = "<group>"; };
 		180189CA26336BD70034F037 /* TechWorkorderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechWorkorderDetail.swift; sourceTree = "<group>"; };
+		1812FEF526352078006BFBF5 /* supervisorNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = supervisorNotificationView.swift; sourceTree = "<group>"; };
+		1812FEFD263520AF006BFBF5 /* supervisorNotifiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = supervisorNotifiCell.swift; sourceTree = "<group>"; };
+		1812FF02263524E1006BFBF5 /* SupervisorWorkorderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorWorkorderVC.swift; sourceTree = "<group>"; };
+		1812FF072635290B006BFBF5 /* SupervisorWorkorderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorWorkorderCell.swift; sourceTree = "<group>"; };
+		1812FF0F26352B65006BFBF5 /* SupervisorUnassignedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorUnassignedVC.swift; sourceTree = "<group>"; };
+		1812FF1426352C9E006BFBF5 /* SupervisorUnassignedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorUnassignedCell.swift; sourceTree = "<group>"; };
+		1812FF19263540E5006BFBF5 /* SupervisorFieldCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorFieldCompletion.swift; sourceTree = "<group>"; };
+		1812FF2626354392006BFBF5 /* SupervisorFieldCompletionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorFieldCompletionCell.swift; sourceTree = "<group>"; };
+		1812FF2B2635536A006BFBF5 /* SupervisorTechnicianWkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorTechnicianWkView.swift; sourceTree = "<group>"; };
+		1812FF3526356145006BFBF5 /* SupervisorTechWkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorTechWkCell.swift; sourceTree = "<group>"; };
+		1812FF4C26357140006BFBF5 /* SupervisorAssignTechVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorAssignTechVc.swift; sourceTree = "<group>"; };
+		1812FF51263571B6006BFBF5 /* SupervisorAssignTechCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorAssignTechCell.swift; sourceTree = "<group>"; };
+		1812FF5626357631006BFBF5 /* SupervisorReassignWKdetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorReassignWKdetail.swift; sourceTree = "<group>"; };
+		1812FF5B26357B3F006BFBF5 /* SupervisorFieldWorkorderdetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorFieldWorkorderdetail.swift; sourceTree = "<group>"; };
+		1812FF6026359736006BFBF5 /* SupervisorWkdetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorWkdetailView.swift; sourceTree = "<group>"; };
+		1812FF682635AE55006BFBF5 /* SupervisorTechListVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorTechListVc.swift; sourceTree = "<group>"; };
+		1812FF6D2635B037006BFBF5 /* SupervisorTechListCollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorTechListCollCell.swift; sourceTree = "<group>"; };
 		183F55A8263469F300B7B922 /* SupervisorhomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorhomeView.swift; sourceTree = "<group>"; };
 		184BF31226332716006CF9BF /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		18823D672631AE36005F3197 /* Imdaad_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Imdaad_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,9 +102,7 @@
 		18A36B3D26328C010074D19E /* WMSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMSegment.swift; sourceTree = "<group>"; };
 		18E1C2682633595400D0EB05 /* NotifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyVC.swift; sourceTree = "<group>"; };
 		18E9477C26329AE700F2922B /* TechnicianHomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicianHomeVc.swift; sourceTree = "<group>"; };
-		18E9478126329B1000F2922B /* SupervisorHomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorHomeVc.swift; sourceTree = "<group>"; };
 		18FECFCD2633F35800302B42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		18FECFD22633F92800302B42 /* SupervisorhomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorhomeCollectionCell.swift; sourceTree = "<group>"; };
 		3634E7C56DBB77207E1E4A27 /* Pods_Imdaad_project_Imdaad_projectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Imdaad_project_Imdaad_projectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF8513DF4672A4A087DB045 /* Pods-Imdaad_projectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Imdaad_projectTests.debug.xcconfig"; path = "Target Support Files/Pods-Imdaad_projectTests/Pods-Imdaad_projectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		70059C7FA130AEF13E52AE58 /* Pods-Imdaad_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Imdaad_project.release.xcconfig"; path = "Target Support Files/Pods-Imdaad_project/Pods-Imdaad_project.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +141,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1812FEF326351FDC006BFBF5 /* Technician */ = {
+			isa = PBXGroup;
+			children = (
+				18823D6E2631AE37005F3197 /* ViewController.swift */,
+				18E9477C26329AE700F2922B /* TechnicianHomeVc.swift */,
+				180189C526335F010034F037 /* TechWorkOrderCell.swift */,
+				18E1C2682633595400D0EB05 /* NotifyVC.swift */,
+				180189C026335C280034F037 /* notifytabCell.swift */,
+				180189CA26336BD70034F037 /* TechWorkorderDetail.swift */,
+			);
+			path = Technician;
+			sourceTree = "<group>";
+		};
+		1812FEF426352033006BFBF5 /* Supervisor */ = {
+			isa = PBXGroup;
+			children = (
+				183F55A8263469F300B7B922 /* SupervisorhomeView.swift */,
+				1812FF02263524E1006BFBF5 /* SupervisorWorkorderVC.swift */,
+				1812FF072635290B006BFBF5 /* SupervisorWorkorderCell.swift */,
+				1812FF6026359736006BFBF5 /* SupervisorWkdetailView.swift */,
+				1812FF0F26352B65006BFBF5 /* SupervisorUnassignedVC.swift */,
+				1812FF1426352C9E006BFBF5 /* SupervisorUnassignedCell.swift */,
+				1812FF5626357631006BFBF5 /* SupervisorReassignWKdetail.swift */,
+				1812FF4C26357140006BFBF5 /* SupervisorAssignTechVc.swift */,
+				1812FF51263571B6006BFBF5 /* SupervisorAssignTechCell.swift */,
+				1812FF19263540E5006BFBF5 /* SupervisorFieldCompletion.swift */,
+				1812FF2626354392006BFBF5 /* SupervisorFieldCompletionCell.swift */,
+				1812FF5B26357B3F006BFBF5 /* SupervisorFieldWorkorderdetail.swift */,
+				1812FF682635AE55006BFBF5 /* SupervisorTechListVc.swift */,
+				1812FF6D2635B037006BFBF5 /* SupervisorTechListCollCell.swift */,
+				1812FF2B2635536A006BFBF5 /* SupervisorTechnicianWkView.swift */,
+				1812FF3526356145006BFBF5 /* SupervisorTechWkCell.swift */,
+				1812FEF526352078006BFBF5 /* supervisorNotificationView.swift */,
+				1812FEFD263520AF006BFBF5 /* supervisorNotifiCell.swift */,
+			);
+			path = Supervisor;
+			sourceTree = "<group>";
+		};
 		18823D5E2631AE35005F3197 = {
 			isa = PBXGroup;
 			children = (
@@ -136,23 +204,16 @@
 		18823D692631AE36005F3197 /* Imdaad_project */ = {
 			isa = PBXGroup;
 			children = (
-				18A36B3D26328C010074D19E /* WMSegment.swift */,
+				1812FEF326351FDC006BFBF5 /* Technician */,
+				1812FEF426352033006BFBF5 /* Supervisor */,
 				18823D6A2631AE37005F3197 /* AppDelegate.swift */,
 				18823D6C2631AE37005F3197 /* SceneDelegate.swift */,
-				18823D6E2631AE37005F3197 /* ViewController.swift */,
 				18FECFCD2633F35800302B42 /* Assets.xcassets */,
 				18823D702631AE37005F3197 /* Main.storyboard */,
 				18823D752631AE51005F3197 /* LaunchScreen.storyboard */,
 				18823D782631AE51005F3197 /* Info.plist */,
-				18E9477C26329AE700F2922B /* TechnicianHomeVc.swift */,
-				18E9478126329B1000F2922B /* SupervisorHomeVc.swift */,
 				184BF31226332716006CF9BF /* UIViewController.swift */,
-				18E1C2682633595400D0EB05 /* NotifyVC.swift */,
-				180189C026335C280034F037 /* notifytabCell.swift */,
-				180189C526335F010034F037 /* TechWorkOrderCell.swift */,
-				180189CA26336BD70034F037 /* TechWorkorderDetail.swift */,
-				18FECFD22633F92800302B42 /* SupervisorhomeCollectionCell.swift */,
-				183F55A8263469F300B7B922 /* SupervisorhomeView.swift */,
+				18A36B3D26328C010074D19E /* WMSegment.swift */,
 			);
 			path = Imdaad_project;
 			sourceTree = "<group>";
@@ -436,18 +497,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1812FF03263524E1006BFBF5 /* SupervisorWorkorderVC.swift in Sources */,
+				1812FF5C26357B3F006BFBF5 /* SupervisorFieldWorkorderdetail.swift in Sources */,
+				1812FF1026352B65006BFBF5 /* SupervisorUnassignedVC.swift in Sources */,
 				184BF31326332717006CF9BF /* UIViewController.swift in Sources */,
+				1812FEFE263520AF006BFBF5 /* supervisorNotifiCell.swift in Sources */,
 				180189CB26336BD70034F037 /* TechWorkorderDetail.swift in Sources */,
 				180189C626335F010034F037 /* TechWorkOrderCell.swift in Sources */,
+				1812FF2726354392006BFBF5 /* SupervisorFieldCompletionCell.swift in Sources */,
 				18823D6F2631AE37005F3197 /* ViewController.swift in Sources */,
-				18FECFD32633F92800302B42 /* SupervisorhomeCollectionCell.swift in Sources */,
+				1812FF2C2635536A006BFBF5 /* SupervisorTechnicianWkView.swift in Sources */,
+				1812FEF626352078006BFBF5 /* supervisorNotificationView.swift in Sources */,
 				18A36B3E26328C010074D19E /* WMSegment.swift in Sources */,
+				1812FF082635290B006BFBF5 /* SupervisorWorkorderCell.swift in Sources */,
+				1812FF6E2635B037006BFBF5 /* SupervisorTechListCollCell.swift in Sources */,
+				1812FF4D26357140006BFBF5 /* SupervisorAssignTechVc.swift in Sources */,
 				18E1C2692633595400D0EB05 /* NotifyVC.swift in Sources */,
 				180189C126335C280034F037 /* notifytabCell.swift in Sources */,
 				18823D6B2631AE37005F3197 /* AppDelegate.swift in Sources */,
+				1812FF52263571B6006BFBF5 /* SupervisorAssignTechCell.swift in Sources */,
+				1812FF3626356145006BFBF5 /* SupervisorTechWkCell.swift in Sources */,
+				1812FF5726357631006BFBF5 /* SupervisorReassignWKdetail.swift in Sources */,
+				1812FF1526352C9E006BFBF5 /* SupervisorUnassignedCell.swift in Sources */,
+				1812FF6126359736006BFBF5 /* SupervisorWkdetailView.swift in Sources */,
 				183F55A9263469F300B7B922 /* SupervisorhomeView.swift in Sources */,
-				18E9478226329B1000F2922B /* SupervisorHomeVc.swift in Sources */,
+				1812FF692635AE55006BFBF5 /* SupervisorTechListVc.swift in Sources */,
 				18823D6D2631AE37005F3197 /* SceneDelegate.swift in Sources */,
+				1812FF1A263540E5006BFBF5 /* SupervisorFieldCompletion.swift in Sources */,
 				18E9477D26329AE700F2922B /* TechnicianHomeVc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

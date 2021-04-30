@@ -9,6 +9,13 @@ import UIKit
 
 class SupervisorhomeView: UIViewController {
     
+    var wkdet = [wkdetails]()
+    var undet = [undetails]()
+    var fcdet = [fcdetails]()
+    var emp_dept:String?
+    var tech_count:String?
+    var indexPath = IndexPath()
+    
     
     
     @IBOutlet weak var wkbtn: UIButton!
@@ -21,6 +28,15 @@ class SupervisorhomeView: UIViewController {
     @IBOutlet weak var fieldcompletionView: UIView!
     @IBOutlet weak var technicianView: UIView!
     
+    @IBOutlet weak var wkcountlab: UILabel!
+    @IBOutlet weak var fieldcompletionCountlab: UILabel!
+    @IBOutlet weak var techniciancountlab: UILabel!
+    @IBOutlet weak var unassignedcountlab: UILabel!
+
+    @IBAction func unwindToMenu1(segue: UIStoryboardSegue) {
+             
+    }
+
     @IBAction func Workorders(_ sender: Any) {
         performSegue(withIdentifier: "workorders", sender: self)
         print("wk tapped")
@@ -29,7 +45,6 @@ class SupervisorhomeView: UIViewController {
     @IBAction func UnassignedWorkorders(_ sender: Any) {
         performSegue(withIdentifier: "unassigned", sender: self)
         print("unassigned tapped")
-        
     }
     
     @IBAction func FieldCompletion(_ sender: Any) {
@@ -42,8 +57,26 @@ class SupervisorhomeView: UIViewController {
         performSegue(withIdentifier: "technicians", sender: self)
         print("technician tapped")
     }
+    
+    @IBAction func snotificationTapped(_ sender: Any) {
+        
+        performSegue(withIdentifier: "snotify", sender: self)
+        
+    }
+    
+    
+     override func viewWillAppear(_ animated: Bool) {
+      
+        downloadItems()
+        undownloadItems()
+        fcdownloadItems()
+        supervisior_Dept()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+      
         wkView.layer.masksToBounds = false
         wkView.layer.shadowRadius = 4
         wkView.layer.shadowOpacity = 1
@@ -85,15 +118,274 @@ class SupervisorhomeView: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func backbtn(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+        self.removeSpinner()
+        
     }
-    */
+    
+    
+    func downloadItems() {
+        guard let employee_id = UserDefaults.standard.value(forKey: "employee_id") as? String else {return}
 
+        
+           let request = NSMutableURLRequest(url: NSURL(string:"https://appstudio.co/iOS/imdaad_supervisor_totalworkorder.php")! as URL)
+               request.httpMethod = "POST"
+               let postString = "employee_id=\(employee_id)"
+               print("postString \(postString)")
+               request.httpBody = postString.data(using: String.Encoding.utf8)
+           let task = URLSession.shared.dataTask(with: request as URLRequest) {
+                 data, response, error in
+                 if error != nil {
+                   print("error=\(String(describing: error))")
+                   return
+                 }
+                 self.parseJSON(data!)
+                 print("response = \(String(describing: response))")
+                 let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                 print("responseString = \(String(describing: responseString))")
+               }
+               task.resume()
+           
+       }
+   
+       
+       func parseJSON(_ data:Data) {
+           var jsonResult = NSArray()
+               do{
+                   jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSArray
+               } catch let error as NSError {
+                   print(error)
+               }
+               var jsonElement = NSDictionary()
+      //     let stocks = NSMutableArray()
+           for i in 0 ..< jsonResult.count
+                {
+               print("The count is \(jsonResult.count)")
+               jsonElement = jsonResult[i] as! NSDictionary
+                   //the following insures none of the JsonElement values are nil through optional binding
+               let work_order_count = jsonElement["work_order_count"] as? String
+
+            
+            wkdet.append(wkdetails(work_order_count: work_order_count))
+
+               }
+           DispatchQueue.main.async(execute: { [self] () -> Void in
+  
+            for i in wkdet{
+                
+                self.wkcountlab.text = i.work_order_count
+               
+            }
+           })
+           }
+    
+    
+    func undownloadItems() {
+        guard let employee_id = UserDefaults.standard.value(forKey: "employee_id") as? String else {return}
+
+        
+           let request = NSMutableURLRequest(url: NSURL(string:"https://appstudio.co/iOS/imdaad_supervisor_unassigned_count.php")! as URL)
+               request.httpMethod = "POST"
+               let postString = "employee_token=\(employee_id)"
+               print("postString \(postString)")
+               request.httpBody = postString.data(using: String.Encoding.utf8)
+           let task = URLSession.shared.dataTask(with: request as URLRequest) {
+                 data, response, error in
+                 if error != nil {
+                   print("error=\(String(describing: error))")
+                   return
+                 }
+                 self.unparseJSON(data!)
+                 print("response = \(String(describing: response))")
+                 let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                 print("responseString = \(String(describing: responseString))")
+               }
+               task.resume()
+           
+       }
+   
+       
+       func unparseJSON(_ data:Data) {
+           var jsonResult = NSArray()
+               do{
+                   jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSArray
+               } catch let error as NSError {
+                   print(error)
+               }
+               var jsonElement = NSDictionary()
+       //    let stocks = NSMutableArray()
+           for i in 0 ..< jsonResult.count
+                {
+               print("The count is \(jsonResult.count)")
+               jsonElement = jsonResult[i] as! NSDictionary
+                   //the following insures none of the JsonElement values are nil through optional binding
+               let unassigned_count = jsonElement["unassigned_count"] as? String
+
+            
+            undet.append(undetails(unassigned_count: unassigned_count))
+             
+                
+                   
+               }
+           DispatchQueue.main.async(execute: { [self] () -> Void in
+  
+            for i in undet{
+                
+                self.unassignedcountlab.text = i.unassigned_count
+               
+            }
+           })
+           }
+    
+    
+    func fcdownloadItems() {
+        guard let employee_id = UserDefaults.standard.value(forKey: "employee_id") as? String else {return}
+
+        
+           let request = NSMutableURLRequest(url: NSURL(string:"https://appstudio.co/iOS/imdaad_supervisor_completed_count.php")! as URL)
+               request.httpMethod = "POST"
+               let postString = "employee_token=\(employee_id)"
+               print("postString \(postString)")
+               request.httpBody = postString.data(using: String.Encoding.utf8)
+           let task = URLSession.shared.dataTask(with: request as URLRequest) {
+                 data, response, error in
+                 if error != nil {
+                   print("error=\(String(describing: error))")
+                   return
+                 }
+                 self.fcparseJSON(data!)
+                 print("response = \(String(describing: response))")
+                 let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                 print("responseString = \(String(describing: responseString))")
+               }
+               task.resume()
+           
+       }
+   
+       
+       func fcparseJSON(_ data:Data) {
+           var jsonResult = NSArray()
+               do{
+                   jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSArray
+               } catch let error as NSError {
+                   print(error)
+               }
+               var jsonElement = NSDictionary()
+         //  let stocks = NSMutableArray()
+           for i in 0 ..< jsonResult.count
+                {
+               print("The count is \(jsonResult.count)")
+               jsonElement = jsonResult[i] as! NSDictionary
+                   //the following insures none of the JsonElement values are nil through optional binding
+               let completed_count = jsonElement["completed_count"] as? String
+
+            
+            fcdet.append(fcdetails(completed_count: completed_count))
+             
+                
+                   
+               }
+           DispatchQueue.main.async(execute: { [self] () -> Void in
+  
+            for i in fcdet{
+                
+                self.fieldcompletionCountlab.text = i.completed_count
+               
+            }
+           })
+        
+           }
+    func technicianJSON(_ data:Data) {
+        var jsonResult = NSArray()
+            do{
+                jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSArray
+            } catch let error as NSError {
+                print(error)
+            }
+            var jsonElement = NSDictionary()
+        let stocks = NSMutableArray()
+        for i in 0 ..< jsonResult.count
+             {
+            jsonElement = jsonResult[i] as! NSDictionary
+            tech_count = jsonElement["tech_count"] as? String
+            print("tech_count \(tech_count)")
+            }
+        DispatchQueue.main.async(execute: { [self] () -> Void in
+            techniciancountlab.text = "\(tech_count!)"
+        })
+        }
+    func supervisior_Dept() {
+        guard let employee_id = UserDefaults.standard.value(forKey: "employee_id") as? String else {return}
+        let request = NSMutableURLRequest(url: NSURL(string:"https://appstudio.co/iOS/imdaad_supervisor_Depart.php")! as URL)
+            request.httpMethod = "POST"
+        let postString = "employee_id=\(employee_id)"
+        
+            print("supervisior_Dept \(postString)")
+            request.httpBody = postString.data(using: String.Encoding.utf8)
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+              data, response, error in
+              if error != nil {
+                print("error=\(String(describing: error))")
+                return
+              }
+              self.supervisiorJSON(data!)
+              print("response = \(String(describing: response))")
+              let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+              print("responseString = \(String(describing: responseString))")
+            }
+            task.resume()
+        }
+    
+    func supervisiorJSON(_ data:Data) {
+        var jsonResult = NSArray()
+            do{
+                jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSArray
+            } catch let error as NSError {
+                print(error)
+            }
+            var jsonElement = NSDictionary()
+        let stocks = NSMutableArray()
+        for i in 0 ..< jsonResult.count
+             {
+            jsonElement = jsonResult[i] as! NSDictionary
+            emp_dept = jsonElement["emp_dept"] as? String
+            print("emp_dept : \(emp_dept)")
+            }
+        DispatchQueue.main.async(execute: { [self] () -> Void in
+            
+        })
+        print("supervisior_emp_dept : \(emp_dept!)")
+        let request = NSMutableURLRequest(url: NSURL(string:"https://appstudio.co/iOS/imdaad_Technician_Count.php")! as URL)
+            request.httpMethod = "POST"
+        let postString = "emp_dept=\(emp_dept!)"
+        UserDefaults.standard.set(emp_dept, forKey: "emp_dept")
+
+            print("technician_count_postString \(postString)")
+            request.httpBody = postString.data(using: String.Encoding.utf8)
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+              data, response, error in
+              if error != nil {
+                print("error=\(String(describing: error))")
+                return
+              }
+              self.technicianJSON(data!)
+              print("response = \(String(describing: response))")
+              let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+              print("responseString = \(String(describing: responseString))")
+            }
+            task.resume()
+        }
+    
+
+}
+struct wkdetails{
+    var work_order_count: String?
+}
+struct undetails{
+    var unassigned_count: String?
+}
+struct fcdetails{
+    var completed_count: String?
 }

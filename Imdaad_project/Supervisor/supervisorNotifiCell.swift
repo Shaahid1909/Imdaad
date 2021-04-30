@@ -8,6 +8,14 @@
 import UIKit
 
 class supervisorNotifiCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var datelab: UILabel!
+    
+    @IBOutlet weak var titlelab: UILabel!
+    
+    @IBOutlet weak var msglab: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
