@@ -11,7 +11,7 @@ class SupervisorTechListVc: UIViewController,UICollectionViewDelegate,UICollecti
     var Technician = [Technician_list]()
     var name:String?
     var work_counts:String?
-   
+    
     @IBAction func backBtn(_ sender: Any) {
         
         self.dismiss(animated: true, completion: nil)

@@ -70,7 +70,7 @@ class SupervisorhomeView: UIViewController {
         downloadItems()
         undownloadItems()
         fcdownloadItems()
-        supervisior_Dept()
+       Technicians_count()
     }
     
     override func viewDidLoad() {
@@ -297,7 +297,48 @@ class SupervisorhomeView: UIViewController {
            })
         
            }
-    func technicianJSON(_ data:Data) {
+    func Technicians_count(){
+           guard let employee_id = UserDefaults.standard.value(forKey: "employee_id") as? String else {return}
+           let request = NSMutableURLRequest(url: NSURL(string:"https://appstudio.co/iOS/iOS_Supervisor_HomeScreen_Technician_Count.php")! as URL)
+               request.httpMethod = "POST"
+           let postString = "employee_id=\(employee_id)"
+               print("Technicians_countpostString \(postString)")
+               request.httpBody = postString.data(using: String.Encoding.utf8)
+           let task = URLSession.shared.dataTask(with: request as URLRequest) {
+                 data, response, error in
+                 if error != nil {
+                   print("error=\(String(describing: error))")
+                   return
+                 }
+                 self.Technicians_countJSON(data!)
+                 print("Technicians_count response = \(String(describing: response))")
+                 let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                 print("Technicians_count responseString = \(String(describing: responseString))")
+               }
+               task.resume()
+       }
+       func Technicians_countJSON(_ data:Data) {
+           var jsonResult = NSArray()
+               do{
+                   jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSArray
+               } catch let error as NSError {
+                   print(error)
+               }
+               var jsonElement = NSDictionary()
+           let stocks = NSMutableArray()
+           for i in 0 ..< jsonResult.count
+                {
+               jsonElement = jsonResult[i] as! NSDictionary
+               tech_count = jsonElement["tech_count"] as? String
+               emp_dept = jsonElement["emp_dept"] as? String
+               print("Technicians_countJSON : \(jsonElement["tech_count"] as? String)")
+               }
+           DispatchQueue.main.async(execute: { [self] () -> Void in
+            techniciancountlab.text = "\(tech_count ?? "0")"
+               UserDefaults.standard.set(emp_dept, forKey: "emp_dept")
+           })
+           }
+/*    func technicianJSON(_ data:Data) {
         var jsonResult = NSArray()
             do{
                 jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSArray
@@ -315,8 +356,9 @@ class SupervisorhomeView: UIViewController {
         DispatchQueue.main.async(execute: { [self] () -> Void in
             techniciancountlab.text = "\(tech_count!)"
         })
-        }
-    func supervisior_Dept() {
+     }
+*/
+ /*   func supervisior_Dept() {
         guard let employee_id = UserDefaults.standard.value(forKey: "employee_id") as? String else {return}
         let request = NSMutableURLRequest(url: NSURL(string:"https://appstudio.co/iOS/imdaad_supervisor_Depart.php")! as URL)
             request.httpMethod = "POST"
@@ -337,8 +379,8 @@ class SupervisorhomeView: UIViewController {
             }
             task.resume()
         }
-    
-    func supervisiorJSON(_ data:Data) {
+    */
+   /* func supervisiorJSON(_ data:Data) {
         var jsonResult = NSArray()
             do{
                 jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSArray
@@ -377,7 +419,7 @@ class SupervisorhomeView: UIViewController {
             }
             task.resume()
         }
-    
+    */
 
 }
 struct wkdetails{

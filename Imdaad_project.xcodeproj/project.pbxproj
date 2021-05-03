@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180189C126335C280034F037 /* notifytabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180189C026335C280034F037 /* notifytabCell.swift */; };
-		180189C626335F010034F037 /* TechWorkOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180189C526335F010034F037 /* TechWorkOrderCell.swift */; };
-		180189CB26336BD70034F037 /* TechWorkorderDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180189CA26336BD70034F037 /* TechWorkorderDetail.swift */; };
 		1812FEF626352078006BFBF5 /* supervisorNotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FEF526352078006BFBF5 /* supervisorNotificationView.swift */; };
 		1812FEFE263520AF006BFBF5 /* supervisorNotifiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FEFD263520AF006BFBF5 /* supervisorNotifiCell.swift */; };
 		1812FF03263524E1006BFBF5 /* SupervisorWorkorderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1812FF02263524E1006BFBF5 /* SupervisorWorkorderVC.swift */; };
@@ -37,8 +34,6 @@
 		18823D822631AE51005F3197 /* Imdaad_projectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18823D812631AE51005F3197 /* Imdaad_projectTests.swift */; };
 		18823D8D2631AE51005F3197 /* Imdaad_projectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18823D8C2631AE51005F3197 /* Imdaad_projectUITests.swift */; };
 		18A36B3E26328C010074D19E /* WMSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A36B3D26328C010074D19E /* WMSegment.swift */; };
-		18E1C2692633595400D0EB05 /* NotifyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E1C2682633595400D0EB05 /* NotifyVC.swift */; };
-		18E9477D26329AE700F2922B /* TechnicianHomeVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E9477C26329AE700F2922B /* TechnicianHomeVc.swift */; };
 		18FECFCE2633F35B00302B42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18FECFCD2633F35800302B42 /* Assets.xcassets */; };
 		655064F963B587E0EFBBBB5D /* Pods_Imdaad_project_Imdaad_projectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3634E7C56DBB77207E1E4A27 /* Pods_Imdaad_project_Imdaad_projectUITests.framework */; };
 		89E7E7B850F973AC65DB4986 /* Pods_Imdaad_project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FAC1ECCE0A67005F4E18744 /* Pods_Imdaad_project.framework */; };
@@ -64,9 +59,6 @@
 
 /* Begin PBXFileReference section */
 		05765045C05FAE296E76F932 /* Pods_Imdaad_projectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Imdaad_projectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		180189C026335C280034F037 /* notifytabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notifytabCell.swift; sourceTree = "<group>"; };
-		180189C526335F010034F037 /* TechWorkOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechWorkOrderCell.swift; sourceTree = "<group>"; };
-		180189CA26336BD70034F037 /* TechWorkorderDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechWorkorderDetail.swift; sourceTree = "<group>"; };
 		1812FEF526352078006BFBF5 /* supervisorNotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = supervisorNotificationView.swift; sourceTree = "<group>"; };
 		1812FEFD263520AF006BFBF5 /* supervisorNotifiCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = supervisorNotifiCell.swift; sourceTree = "<group>"; };
 		1812FF02263524E1006BFBF5 /* SupervisorWorkorderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupervisorWorkorderVC.swift; sourceTree = "<group>"; };
@@ -100,8 +92,6 @@
 		18823D8C2631AE51005F3197 /* Imdaad_projectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imdaad_projectUITests.swift; sourceTree = "<group>"; };
 		18823D8E2631AE51005F3197 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18A36B3D26328C010074D19E /* WMSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMSegment.swift; sourceTree = "<group>"; };
-		18E1C2682633595400D0EB05 /* NotifyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyVC.swift; sourceTree = "<group>"; };
-		18E9477C26329AE700F2922B /* TechnicianHomeVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicianHomeVc.swift; sourceTree = "<group>"; };
 		18FECFCD2633F35800302B42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3634E7C56DBB77207E1E4A27 /* Pods_Imdaad_project_Imdaad_projectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Imdaad_project_Imdaad_projectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF8513DF4672A4A087DB045 /* Pods-Imdaad_projectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Imdaad_projectTests.debug.xcconfig"; path = "Target Support Files/Pods-Imdaad_projectTests/Pods-Imdaad_projectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,22 +131,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1812FEF326351FDC006BFBF5 /* Technician */ = {
-			isa = PBXGroup;
-			children = (
-				18823D6E2631AE37005F3197 /* ViewController.swift */,
-				18E9477C26329AE700F2922B /* TechnicianHomeVc.swift */,
-				180189C526335F010034F037 /* TechWorkOrderCell.swift */,
-				18E1C2682633595400D0EB05 /* NotifyVC.swift */,
-				180189C026335C280034F037 /* notifytabCell.swift */,
-				180189CA26336BD70034F037 /* TechWorkorderDetail.swift */,
-			);
-			path = Technician;
-			sourceTree = "<group>";
-		};
 		1812FEF426352033006BFBF5 /* Supervisor */ = {
 			isa = PBXGroup;
 			children = (
+				18823D6E2631AE37005F3197 /* ViewController.swift */,
 				183F55A8263469F300B7B922 /* SupervisorhomeView.swift */,
 				1812FF02263524E1006BFBF5 /* SupervisorWorkorderVC.swift */,
 				1812FF072635290B006BFBF5 /* SupervisorWorkorderCell.swift */,
@@ -204,7 +182,6 @@
 		18823D692631AE36005F3197 /* Imdaad_project */ = {
 			isa = PBXGroup;
 			children = (
-				1812FEF326351FDC006BFBF5 /* Technician */,
 				1812FEF426352033006BFBF5 /* Supervisor */,
 				18823D6A2631AE37005F3197 /* AppDelegate.swift */,
 				18823D6C2631AE37005F3197 /* SceneDelegate.swift */,
@@ -502,8 +479,6 @@
 				1812FF1026352B65006BFBF5 /* SupervisorUnassignedVC.swift in Sources */,
 				184BF31326332717006CF9BF /* UIViewController.swift in Sources */,
 				1812FEFE263520AF006BFBF5 /* supervisorNotifiCell.swift in Sources */,
-				180189CB26336BD70034F037 /* TechWorkorderDetail.swift in Sources */,
-				180189C626335F010034F037 /* TechWorkOrderCell.swift in Sources */,
 				1812FF2726354392006BFBF5 /* SupervisorFieldCompletionCell.swift in Sources */,
 				18823D6F2631AE37005F3197 /* ViewController.swift in Sources */,
 				1812FF2C2635536A006BFBF5 /* SupervisorTechnicianWkView.swift in Sources */,
@@ -512,8 +487,6 @@
 				1812FF082635290B006BFBF5 /* SupervisorWorkorderCell.swift in Sources */,
 				1812FF6E2635B037006BFBF5 /* SupervisorTechListCollCell.swift in Sources */,
 				1812FF4D26357140006BFBF5 /* SupervisorAssignTechVc.swift in Sources */,
-				18E1C2692633595400D0EB05 /* NotifyVC.swift in Sources */,
-				180189C126335C280034F037 /* notifytabCell.swift in Sources */,
 				18823D6B2631AE37005F3197 /* AppDelegate.swift in Sources */,
 				1812FF52263571B6006BFBF5 /* SupervisorAssignTechCell.swift in Sources */,
 				1812FF3626356145006BFBF5 /* SupervisorTechWkCell.swift in Sources */,
@@ -524,7 +497,6 @@
 				1812FF692635AE55006BFBF5 /* SupervisorTechListVc.swift in Sources */,
 				18823D6D2631AE37005F3197 /* SceneDelegate.swift in Sources */,
 				1812FF1A263540E5006BFBF5 /* SupervisorFieldCompletion.swift in Sources */,
-				18E9477D26329AE700F2922B /* TechnicianHomeVc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
