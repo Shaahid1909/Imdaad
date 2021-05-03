@@ -67,7 +67,7 @@ class SupervisorUnassignedVC: UIViewController,UITableViewDelegate,UITableViewDa
       
         
         cell.unwktypTokenlab.text = unwkorder[indexPath.row].unworktypetoken
-        cell.unwktype.text = unwkorder[indexPath.row].unworktypetoken
+        cell.unwktype.text = unwkorder[indexPath.row].unWorktype
         cell.undateandtimelab.text = unwkorder[indexPath.row].unDatetime
         cell.unlocationlab.text = unwkorder[indexPath.row].unlocation
         
